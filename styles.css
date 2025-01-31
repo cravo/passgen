@@ -1,0 +1,126 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #121212;
+    margin: 0;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+/* Main container */
+.container {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Password display wrapper */
+.password-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the content */
+    background: #2a2a2a;
+    padding: 15px;
+    margin: 20px auto; /* Keeps it centered */
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+    max-width: 350px; /* Prevents stretching */
+    overflow: hidden;
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+/* Password text area */
+#passwordDisplay {
+    flex: 1;
+    min-width: 0;
+    text-align: center; /* Centers text inside */
+    padding-right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Copy icon stays on the right */
+.copy-icon {
+    cursor: pointer;
+    font-size: 24px;
+    color: #bbbbbb;
+    transition: color 0.2s;
+    flex-shrink: 0; /* Ensures it doesn't shrink */
+    margin-left: 10px; /* Adds spacing */
+}
+
+.copy-icon:hover {
+    color: #00bcd4;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #00bcd4;
+}
+
+button {
+    background: #00bcd4;
+    color: #2a2a2a;
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #0097a7;
+}
+
+/* Toast notification */
+.toast {
+    visibility: hidden;
+    min-width: 200px;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #1e1e1e;
+    color: #bbbbbb;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+}
