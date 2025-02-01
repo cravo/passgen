@@ -1,5 +1,7 @@
 # Strong password generator
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cravo_passgen&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=cravo_passgen)
+
 This code can generate strong but memorable passwords.  It creates passwords that are three common words and a 4-digit number.  E.g. "PlanetJokerEnrich1002"
 
 Optionally it can swap characters for symbols (e.g. 'a' becomes '@'), and can insert symbols between the words.  Examples are "Jug%Foot&Zephyr^8100" and "C@rd*L@k3!Im@g3^2098"
