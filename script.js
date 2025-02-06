@@ -5,6 +5,9 @@ const symbolMap =
     'o': '0', 's': '$', 't': '7', 'z': '2'
 };
 
+let progressBarInterval;
+const generateNewPasswordEveryNSeconds = 60;
+
 function getRandomWord() 
 {
     return words[Math.floor(Math.random() * words.length)];
@@ -30,6 +33,24 @@ function getSeparator()
     return separator;
 }
 
+function startProgressBar()
+{
+    let timeLeft = generateNewPasswordEveryNSeconds;
+    clearInterval(progressBarInterval); 
+    document.getElementById("progressBar").style.width = "100%";
+
+    progressBarInterval = setInterval(() => {
+        timeLeft--;
+        const progressPercent = (timeLeft / generateNewPasswordEveryNSeconds) * 100;
+        document.getElementById("progressBar").style.width = progressPercent + "%";
+
+        if (timeLeft <= 0) {
+            clearInterval(progressBarInterval);
+            generatePassword();
+        }
+    }, 1000);
+}
+
 function generatePassword() 
 {
     let useSymbols = document.getElementById('symbolToggle').checked;
@@ -53,6 +74,8 @@ function generatePassword()
     password += randomDigits;
 
     document.getElementById('passwordDisplay').textContent = password;
+
+    startProgressBar();
 }
 
 function copyToClipboard() 
